@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "concurrently  \"npm:dev:frontend\" \"npm:dev:backend\" ",
     "dev:frontend": "cd frontend && npm start",
     "dev:backend": "cd backend && npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,5 +18,16 @@
   "bugs": {
     "url": "https://github.com/aumirza/mern-auth/issues"
   },
-  "homepage": "https://github.com/aumirza/mern-auth#readme"
+  "homepage": "https://github.com/aumirza/mern-auth#readme",
+  "dependencies": {
+    "@types/cookie-parser": "^1.4.3",
+    "concurrently": "^7.4.0",
+    "connect-mongodb-session": "^3.1.1",
+    "cookie-parser": "^1.4.6",
+    "passport-google-oauth2": "^0.2.0"
+  },
+  "devDependencies": {
+    "@types/connect-mongodb-session": "^2.4.4",
+    "@types/passport-google-oauth2": "^0.1.5"
+  }
 }
