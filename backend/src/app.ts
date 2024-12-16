@@ -4,10 +4,12 @@ import session from 'express-session'
 import cookieParser from 'cookie-parser'
 import mongoDbSession from 'connect-mongodb-session'
 import cors from 'cors'
+import swaggerUi from 'swagger-ui-express'
 
 import { corsOptions, mongoDbSessionOptions, sessionOptions } from './config'
 import router from './routes'
 import './config/passportLocalStrategy'
+import { specs } from './config/swagger'
 
 const mongoDbStore = mongoDbSession(session)
 
@@ -32,6 +34,7 @@ app.use(session(sessionOptions))
 app.use(passport.initialize())
 app.use(passport.session())
 
+app.use('/', swaggerUi.serve, swaggerUi.setup(specs, { explorer: true }))
 app.use('/api', router)
 
 export default app

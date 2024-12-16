@@ -4,7 +4,38 @@ import authController from '../controllers/authController'
 
 const authRouter = Router()
 
+/**
+ * @swagger
+ * /api/auth/login:
+ *  get:
+ *    summary: Login
+ *    description: Login
+ *    tags:
+ *      - Auth
+ *    responses:
+ *      200:
+ *        description: Success
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                message:
+ *                  type: string
+ *                  example: Login
+ *      500:
+ *        description: Server error
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: object
+ *              properties:
+ *                message:
+ *                  type: string
+ *                  example: Server error
+ */
 authRouter.get('/login', authController.login)
+
 authRouter.post('/register', authController.register)
 
 // authRouter.post('/loginSuccess', authController.loginSuccess)
