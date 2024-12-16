@@ -53,7 +53,7 @@ export const LoginForm: React.FC<Props> = ({ active }) => {
         left: 0,
         py: 5,
         zIndex: 2,
-        transition: 'all .6s ease-in-out opacity 0.3s ease-out',
+        transition: 'all .6s ease-in-out',
     }
 
     const flexCenter: SxProps = {
